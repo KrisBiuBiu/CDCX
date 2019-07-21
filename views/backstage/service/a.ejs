@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html lang="en" class="ie6 ielt7 ielt8 ielt9"><![endif]--><!--[if IE 7 ]><html lang="en" class="ie7 ielt8 ielt9"><![endif]--><!--[if IE 8 ]><html lang="en" class="ie8 ielt9"><![endif]--><!--[if IE 9 ]><html lang="en" class="ie9"> <![endif]--><!--[if (gt IE 9)|!(IE)]><!--> 
+<html lang="en"><!--<![endif]--> 
+	<head>
+		<meta charset="utf-8">
+		<title>Files - Akira</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="/bootstrap/css/site.css" rel="stylesheet">
+		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+					<% include ../backLeft.ejs %>
+				<div class="span9">
+          <% if(post.a){ %>
+            <h1>
+              <%-post.a.title %>
+            </h1>
+            <div>
+              <%-post.a.content%>
+            </div>
+          <% } %>
+          <hr>
+          <div class="control-group">
+            <label class="control-label" for="textarea">标题</label>
+            <div class="controls">
+              <input type="text" class="input-xlarge" id="input01"/>
+            </div>
+          </div>
+          <div>
+            <% include ../../ueditor/ueditor.ejs %>
+          </div>
+          <div style="height: 200px;overflow: auto;">
+              <ul class="thumbnails">
+                <% var imgArray = post.imgArray %>
+                <% for(var i in imgArray) { %>
+                  <li class="span2">
+                      <a href="#" class="thumbnail">
+                        <img src="/upload/<%=imgArray[i].id%>.<%=imgArray[i].ext%>" alt="" onclick="insertImg(this)">
+                      </a>
+                    </li>
+                <% } %>
+              </ul>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" onclick="editService('a')">Upload</button> 
+            </div>
+				</div>
+			</div>
+		</div>
+		<script src="/bootstrap/js/jquery.min.js"></script>
+		<script src="/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/bootstrap/js/site.js"></script>
+		<script src="/js/index.js"></script>
+	</body>
+</html>

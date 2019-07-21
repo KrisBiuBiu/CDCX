@@ -1,0 +1,23 @@
+const Router = require('koa-router');
+const router = new Router();
+const routers = require('../requireFolder')(__dirname);
+const homeRouter = routers.home;
+const loginRouter = routers.login;
+const backstageRouter = routers.backstage;
+const contactRouter = routers.contact;
+const newsRouter = routers.news;
+const serviceRouter = routers.service;
+const introductionRouter = routers.introduction;
+const eventRouter = routers.event;
+const carsportRouter = routers.carsport;
+
+router.use('/', homeRouter.routes(), homeRouter.allowedMethods());
+router.use('/login', loginRouter.routes(), loginRouter.allowedMethods());
+router.use('/backstage', backstageRouter.routes(), backstageRouter.allowedMethods());
+router.use('/contact', contactRouter.routes(), contactRouter.allowedMethods());
+router.use('/news', newsRouter.routes(), newsRouter.allowedMethods());
+router.use('/service', serviceRouter.routes(), serviceRouter.allowedMethods());
+router.use('/introduction', introductionRouter.routes(), introductionRouter.allowedMethods());
+router.use('/event', eventRouter.routes(), eventRouter.allowedMethods());
+router.use('/carsport', carsportRouter.routes(), carsportRouter.allowedMethods());
+module.exports = router;

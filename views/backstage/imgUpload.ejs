@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html lang="en" class="ie6 ielt7 ielt8 ielt9"><![endif]--><!--[if IE 7 ]><html lang="en" class="ie7 ielt8 ielt9"><![endif]--><!--[if IE 8 ]><html lang="en" class="ie8 ielt9"><![endif]--><!--[if IE 9 ]><html lang="en" class="ie9"> <![endif]--><!--[if (gt IE 9)|!(IE)]><!--> 
+<html lang="en"><!--<![endif]--> 
+	<head>
+		<meta charset="utf-8">
+		<title>Files - Akira</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="/bootstrap/css/site.css" rel="stylesheet">
+		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+        <% include ./backLeft.ejs %>
+				<div class="span9">
+					<div id="new-file" class="form-horizontal">
+            <fieldset>
+              <legend>上传新图片</legend>
+              <div class="control-group">
+                <label class="control-label" for="fileInput">File</label>
+                <div class="controls">
+                  <input class="input-file" id="fileInput" type="file" accept="image/png,image/jpeg"/>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary" onclick="uploadImage()">Upload</button> 
+              </div>
+            </fieldset>
+          </div>
+					<h1>
+						当前图片共<%=imgArray.length %>张
+					</h1>
+					<ul class="thumbnails" style="height: 500px;overflow-y: auto;">
+            <% for(var i in imgArray) { %>
+						<li class="span2">
+							<a href="#" class="thumbnail">
+								<img src="/upload/<%=imgArray[i].id%>.<%=imgArray[i].ext%>" alt="" onclick="insertImg()"/>
+							</a>
+            </li>
+            <% } %>
+          </ul>
+					
+				</div>
+			</div>
+		</div>
+		<script src="/bootstrap/js/jquery.min.js"></script>
+		<script src="/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/bootstrap/js/site.js"></script>
+		<script src="/js/index.js"></script>
+	</body>
+</html>

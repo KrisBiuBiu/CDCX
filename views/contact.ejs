@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8">
+    <meta name="renderer" content="webkit"> 
+    <meta name="Keywords" content="">
+
+    <meta name="Description" content="">
+
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-all.css" type="text/css" />
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <!-- External JavaScripts
+    ============================================= -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?8f6f6a44f08006c8bf1f485c0c1da1af";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    <!-- Document Title
+    ============================================= -->
+	<title>联系我们  成都赤晓</title>
+
+
+</head>
+<body class="stretched">
+
+<!-- Document Wrapper
+    ============================================= -->
+    <div id="wrapper" class="clearfix">
+
+        <!-- Header
+        ============================================= -->
+        <header id="header" class="page-section full-header">
+
+            <div id="header-wrap">
+
+                <div class="container clearfix">
+
+                    <div id="primary-menu-trigger"><i class="fa fa-reorder"></i></div>
+                    <% include nav.ejs %>
+                </div>
+
+            </div>
+
+        </header><!-- #header end -->
+        <!-- #header end -->
+
+        <!-- Content
+        ============================================= -->
+        <section id="content" style="background-color:#222222;color:#fff">
+
+            <div class="content-wrap">
+
+                <div class="container clearfix">
+                        <div class="container clearfix">
+
+                                <div class="row clear-bottommargin">
+            
+                                    <% for(var i in post.contactArray){ %>
+                                        <div class="col-md-4 col-sm-6 bottommargin">
+                                            <div class="promo promo-dark promo-mini" style="border: 1px solid #fff;">
+                                                <h5 style="color:#fec400;"><p><%=post.contactArray[i].posttion %>：<%=post.contactArray[i].name %></p><p>电话：<%=post.contactArray[i].mobile %></p><p>Email：<%=post.contactArray[i].email %></p></h5>
+                                            </div>
+                                        </div>
+                                    <% } %>
+            
+            
+                                </div>
+            
+                            </div>
+                    <!-- Contact Form
+                    ============================================= -->
+                    <div class="col_half">
+
+                        <div class="fancy-title title-dotted-border">
+                            <h3>贵宾留言</h3>
+                        </div>
+
+
+                        <form class="nobottommargin" id="template-contactform" name="myform3" action="/plus/form/form.asp" onSubmit="return(form_c(3));"  target="hidform3" method="post">
+                        <input type="hidden" value="Save" name="action"/>
+                        <input type="hidden" value="3" name="id"/>
+                        <input type="hidden" value="" name="m"/>
+                        <input type="hidden" value="" name="d"/>
+                        <input type="hidden" value="" id="tousername" name="tousername"/>
+                            <div class="form-process"></div>
+
+                            <div class="col_one_third">
+                                <label for="template-contactform-name">您的姓名 <small>*</small></label>
+                                <input type="text" id="KS_name" name="KS_name" value="" class="sm-form-control required" />
+                            </div>
+
+                            <div class="col_one_third">
+                                <label for="template-contactform-email">您的Email <small>*</small></label>
+                                <input type="email" id="KS_EMAIL" name="KS_EMAIL" value="" class="required email sm-form-control" />
+                            </div>
+
+                            <div class="col_one_third col_last">
+                                <label for="template-contactform-phone">您的手机 <small>*</small></label>
+                                <input type="text" id="KS_MPHONE" name="KS_MPHONE" value="" class="sm-form-control" />
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="col_full">
+                                <label for="template-contactform-message">您的留言 <small>*</small></label>
+                                <textarea class="required sm-form-control" id="KS_massage" name="KS_massage" rows="6" cols="30"></textarea>
+                            </div> 
+
+
+                            <div class="col_full">
+                                <button name="submit1" type="submit" id="submit-button" tabindex="5" value="Submit" class="button button-3d nomargin">提交留言</button>
+                            </div>
+
+                        </form>
+
+
+                    </div><!-- Contact Form End -->
+
+                    <!-- Google Map
+                    ============================================= -->
+                    <div class="col_half col_last">
+
+                        <section id="google-map" class="gmap" style="height: 410px;"><p>
+<!--电子地图开始--->
+<script src="js/33d5c90f738a4c65973aed3795eec75b.js" type="text/javascript"></script>
+<div style="width:auto;height:400px;border:1px solid gray" id="container"></div>
+
+<script type="text/javascript"> 
+	var map = new BMap.Map("container");          // 创建Map实例
+	var point = new BMap.Point(104.247007,30.550654);  // 创建点坐标
+	map.centerAndZoom(point,17);                  // 初始化地图，设置中心点坐标和地图级别。
+	map.addControl(new BMap.NavigationControl());   
+	map.addControl(new BMap.ScaleControl());   
+	map.addControl(new BMap.OverviewMapControl()); 
+	var sContent ="<h4 style='margin:0 0 5px 0;padding:0.2em 0'>地址：</h4>" +"<p style='margin:0;line-height:1.5;font-size:13px;'>电话： </p>"
+	
+    window.setTimeout(function(){map.panTo(new BMap.Point(104.247007,30.550654));}, 2000);
+     
+	function addMarker(point, index){   
+	  // 创建图标对象   
+	  var myIcon = new BMap.Icon("http://api.map.baidu.com/img/markers.png", new BMap.Size(23, 25), {   
+		offset: new BMap.Size(10, 25),                  // 指定定位位置   
+		imageOffset: new BMap.Size(0, 0 - index * 25)   // 设置图片偏移   
+	  });
+	  var marker = new BMap.Marker(point, {icon: myIcon});   
+	  map.addOverlay(marker);  
+	  
+	  if (index==0){
+		var infoWindow = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
+		 marker.addEventListener("click", function(){										
+		   this.openInfoWindow(infoWindow);	}); 
+		map.openInfoWindow(infoWindow, map.getCenter());      // 打开信息窗口 
+	  }
+	}  
+</script>
+<!--电子地图结束--->
+</p></section>
+
+
+                    </div><!-- Google Map End -->
+
+                    <div class="clear"></div>
+
+                    <!-- Contact Info
+                    ============================================= -->
+
+
+        <!-- Contact Info End -->
+
+                </div>
+
+            </div>
+
+        </section><!-- #content end -->
+
+        <% include ./footer.ejs %>
+        <!-- #wrapper end -->
+
+    <!-- Go To Top
+    ============================================= -->
+    <div id="gotoTop" class="fa fa-angle-up"></div>
+
+    <!-- Footer Scripts
+    ============================================= -->
+    <script type="text/javascript" src="js/functions.js"></script>
+
+</body>
+</html>

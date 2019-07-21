@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html lang="en" class="ie6 ielt7 ielt8 ielt9"><![endif]--><!--[if IE 7 ]><html lang="en" class="ie7 ielt8 ielt9"><![endif]--><!--[if IE 8 ]><html lang="en" class="ie8 ielt9"><![endif]--><!--[if IE 9 ]><html lang="en" class="ie9"> <![endif]--><!--[if (gt IE 9)|!(IE)]><!--> 
+<html lang="en"><!--<![endif]--> 
+	<head>
+		<meta charset="utf-8">
+		<title>Files - Akira</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/bootstrap/css/site.css" rel="stylesheet">
+    <style>
+      .serImg {
+        height: 50px;
+        width: 70px;
+      }
+      .midImg {
+        height:  50px; 
+        width: 70px;
+      }
+      .kehuImg {
+        height: 50px;
+        width: 70px
+      }
+    </style>
+		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+          <% include ./backLeft.ejs %>
+          <div class="span9">
+            <h1>
+              Edit Your Profile
+            </h1>
+            <div id="edit-profile" class="form-horizontal">
+              <fieldset>
+                <legend>Your Profile</legend>
+                <h4>第一段介绍</h4>
+                <hr>
+                <div class="control-group">
+                  <label class="control-label" for="input01">标题</label>
+                  <div class="controls">
+                      <input type="text" class="input-xxlarge" id="firstTitle" placeholder="标题" value="<%=post.homeDemo.firstTitle %>"/>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="input01">中文介绍</label>
+                  <div class="controls">
+                    <textarea class="input-xxlarge" id="firstCnCon" rows="4" placeholder="中文介绍"><%=post.homeDemo.firstCnCon %></textarea>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="input01">英文介绍</label>
+                  <div class="controls">
+                    <textarea class="input-xxlarge" id="firstEnCon" rows="4" placeholder="英文介绍"><%=post.homeDemo.firstEnCon %></textarea>
+                  </div>
+                </div>
+                <hr>
+                <h4>我们的服务</h4>
+                <hr>
+                <div class="control-group">
+                  <label class="control-label" for="input01">简单说明</label>
+                  <div class="controls">
+                    <textarea class="input-xxlarge" id="serEasyTitle" rows="4" placeholder="简单说明"><%=post.homeDemo.serEasyTitle %></textarea>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="input01">服务一</label>
+                  <div class="controls">
+                    <input type="text" class="input-xxlarge" id="serNameOne" placeholder="服务1名称" value="<%=post.homeDemo.serNameOne %>"/>
+                    <textarea class="input-xxlarge" id="serTextOne" rows="4" placeholder="服务1说明"><%=post.homeDemo.serTextOne %></textarea>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="input01">服务二</label>
+                  <div class="controls">
+                    <input type="text" class="input-xxlarge" id="serNameTwo" placeholder="服务2名称" value="<%=post.homeDemo.serNameTwo %>" />
+                    <textarea class="input-xxlarge" id="serTextTwo" rows="4" placeholder="服务2说明"><%=post.homeDemo.serTextTwo %></textarea>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="input01">服务三</label>
+                  <div class="controls">
+                    <input type="text" class="input-xxlarge" id="serNameThr" placeholder="服务3名称" value="<%=post.homeDemo.serNameThr %>" />
+                    <textarea class="input-xxlarge" id="serTextThr" rows="4" placeholder="服务3说明"><%=post.homeDemo.serTextThr %></textarea>
+                  </div>
+                </div>
+                <hr>
+                <h4>中部介绍</h4>
+                <hr>
+                <div class="control-group">
+                  <label class="control-label" for="input01">左侧图片</label>
+                  <div class="controls">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th style="width: 30%">
+                            <img src="/upload/<%=post.homeDemo.midLeftImg %>" alt="" class="midImg" id="midLeftImg" sid="">
+                          </th>
+                          <th style="width: 40%">
+                            <input type="file" name="" sid="" id="imgFile">
+                          </th>
+                          <th style="width: 30%">
+                            <button class="btn btn-primary btn-small" onclick="middleUploadImg(this)">upload</button>
+                          </th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="input01">右侧标题</label>
+                  <div class="controls">
+                    <textarea class="input-xxlarge" id="midRightTitle" rows="4" placeholder="右侧标题"><%=post.homeDemo.midRightTitle %></textarea>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="input01">右侧介绍第一段</label>
+                  <div class="controls">
+                    <textarea class="input-xxlarge" id="midRightConOne" rows="4" placeholder="右侧介绍第一段"><%=post.homeDemo.midRightConOne %></textarea>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="input01">右侧介绍第二段</label>
+                  <div class="controls">
+                    <textarea class="input-xxlarge" id="midRightConTwo" rows="4" placeholder="右侧介绍第二段"><%=post.homeDemo.midRightConTwo %></textarea>
+                  </div>
+                </div>
+                <hr>
+                <h4>场地推荐方案</h4>
+                <hr>
+                <div class="control-group">
+                  <label class="control-label" for="input01">简单说明</label>
+                  <div class="controls">
+                    <textarea class="input-xxlarge" id="groTitle" rows="4"><%=post.homeDemo.groTitle %></textarea>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="input01">图片</label>
+                  <div class="controls">
+                    <table class="table table-striped" id="groImgArr">
+                      <thead>
+                        <tr>
+                          <th style="width: 30%">显示</th>
+                          <th style="width: 40%">选择文件</th>
+                          <th style="width: 30%">上传</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <% var groImgArr = post.homeDemo.groImgArr %>
+                          <% for(var i=0;i < 8;i++){ %>
+                            <tr>
+                              <td>
+                                <img src="/upload/<%=groImgArr[i] %>" alt="" class="serImg" sid="<%=groImgArr[i] %>">
+                              </td>
+                              <td>
+                                <input type="file" name="" id="imgFile">
+                              </td>
+                              <td>
+                                <button class="btn btn-primary btn-small" onclick="serviceUploadImg(this)">upload</button>
+                              </td>
+                            </tr>  
+                          <% } %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <hr>
+                <h4>我们的客户</h4>
+                <hr>
+                <div class="control-group">
+                  <label class="control-label" for="input01">简单说明</label>
+                  <div class="controls">
+                    <textarea class="input-xxlarge" id="kehuTitle" rows="4"><%=post.homeDemo.kehuTitle %></textarea>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="input01">图片</label>
+                  <div class="controls">
+                    <table class="table table-striped" id="kehuImgArr">
+                      <thead>
+                        <tr>
+                          <th style="width: 30%">显示</th>
+                          <th style="width: 40%">选择文件</th>
+                          <th style="width: 30%">上传</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <% var kehuImgArr = post.homeDemo.kehuImgArr %>
+                          <% for(var i=0;i < 12;i++){ %>
+                            <tr>
+                              <td>
+                                <img src="/upload/<%=kehuImgArr[i] %>" alt="" class="kehuImg" sid="<%=kehuImgArr[i] %>">
+                              </td>
+                              <td>
+                                <input type="file" name="" id="imgFile">
+                              </td>
+                              <td>
+                                <button class="btn btn-primary btn-small" onclick="kehuUploadImg(this)">upload</button>
+                              </td>
+                            </tr>  
+                          <% } %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+					
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary" onclick="saveHome()">保存</button>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+			</div>
+		</div>
+		<script src="/bootstrap/js/jquery.min.js"></script>
+		<script src="/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/bootstrap/js/site.js"></script>
+		<script src="/js/index.js"></script>
+	</body>
+</html>

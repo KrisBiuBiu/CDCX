@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8">
+    <meta name="renderer" content="webkit"> 
+    <meta name="Keywords" content="">
+
+    <meta name="Description" content="">
+
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style-all.css" type="text/css" />
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <!-- External JavaScripts
+    ============================================= -->
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/plugins.js"></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?8f6f6a44f08006c8bf1f485c0c1da1af";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    <!-- Document Title
+    ============================================= -->
+	<title>经营服务  成都赤晓</title>
+
+
+</head>
+<body class="stretched">
+
+<!-- Document Wrapper
+    ============================================= -->
+    <div id="wrapper" class="clearfix">
+
+        <!-- Header
+        ============================================= -->
+        <header id="header" class="page-section full-header">
+
+            <div id="header-wrap">
+
+                <div class="container clearfix">
+
+                    <div id="primary-menu-trigger"><i class="fa fa-reorder"></i></div>
+
+                    <% include nav.ejs %>
+
+                </div>
+
+            </div>
+
+        </header><!-- #header end -->
+        <!-- #header end -->
+
+
+
+        <!-- Content
+        ============================================= -->
+        <section id="content" style="background-color:#222222;color:#fff">
+
+            <div class="content-wrap">
+
+                <div class="container clearfix">
+
+                    <!-- Post Content
+                    ============================================= -->
+                    <% if(post.a){ %>
+                        <div class="postcontent nobottommargin col_last clearfix">
+                            <%-post.a.content %>
+    
+                        </div><!-- .postcontent end -->
+                        <% } %>
+
+                    <% include ./newLeft.ejs %>
+
+                </div>
+
+            </div>
+
+        </section><!-- #content end -->
+
+        <% include ./footer.ejs %>
+
+    <!-- Go To Top
+    ============================================= -->
+    <div id="gotoTop" class="fa fa-angle-up"></div>
+
+    <!-- Footer Scripts
+    ============================================= -->
+    <script type="text/javascript" src="/js/functions.js"></script>
+
+</body>
+</html>

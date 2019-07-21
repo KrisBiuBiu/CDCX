@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html lang="en" class="ie6 ielt7 ielt8 ielt9"><![endif]--><!--[if IE 7 ]><html lang="en" class="ie7 ielt8 ielt9"><![endif]--><!--[if IE 8 ]><html lang="en" class="ie8 ielt9"><![endif]--><!--[if IE 9 ]><html lang="en" class="ie9"> <![endif]--><!--[if (gt IE 9)|!(IE)]><!--> 
+<html lang="en"><!--<![endif]--> 
+	<head>
+		<meta charset="utf-8">
+		<title>Files - Akira</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="/bootstrap/css/site.css" rel="stylesheet">
+		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+					<% include ./backLeft.ejs %>
+				<div class="span9">
+					<h1>
+						联系方式列表
+					</h1>
+					<ul class="files zebra-list">
+            <% var contactArray = post.contactArray %>
+            <% for(var a in contactArray) { %>
+              <li>
+                  <p><%=contactArray[a].position %> : <%=contactArray[a].name %></p>
+                  <p>
+                      <span><%=contactArray[a].mobile %></span>
+                      <span><%=contactArray[a].email %></span>
+                  </p>
+                  <p>
+                    <button id="<%=contactArray[a].id %>" onclick="delContact(this)">删除</button>
+                  </p>
+              </li>
+            <% } %>
+					</ul>
+					<a class="toggle-link" href="#new-file"><i class="icon-plus"></i> 添加新的联系方式</a>
+					<div id="new-file" class="form-horizontal hidden">
+						<fieldset>
+							<legend>New</legend>
+							<div class="control-group">
+								<label class="control-label" for="textarea">职能</label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" id="input01" />
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="textarea">联系人姓名</label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" id="input02" />
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="textarea">联系电话</label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" id="input03" />
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="textarea">邮箱</label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" id="input04" />
+								</div>
+							</div>
+							<div class="form-actions">
+								<button type="submit" class="btn btn-primary" onclick="postContact()">Upload</button> 
+							</div>
+						</fieldset>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="/bootstrap/js/jquery.min.js"></script>
+		<script src="/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/bootstrap/js/site.js"></script>
+		<script src="/js/index.js"></script>
+	</body>
+</html>

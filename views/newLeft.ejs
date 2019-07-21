@@ -1,0 +1,25 @@
+<div class="col_one_fourth nobottommargin">
+
+    <h4 style="margin-top:60px;">新闻</h4>
+    <div id="post-list-footer">
+
+      <% for(var i in post.newsArray){ %>
+        <div class="spost clearfix">
+            <div class="entry-c">
+                <div class="entry-title">
+                    <h4><a href="/news/<%=post.newsArray[i].id %>"><%=post.newsArray[i].title %></a></h4>
+                </div>
+                <ul class="entry-meta">
+                    <li><%=post.newsArray[i].time %></li>
+                </ul>
+            </div>
+        </div>
+      <% } %>
+
+
+
+    </div>
+
+
+
+</div>
