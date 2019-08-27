@@ -10,6 +10,8 @@ I saved the login account and password in the background in config.js, but in fa
 # Precautions
 Before you execute npm install, please check the package.json in the root directory to confirm which modules are unnecessary. Please remove them from the file. This will make your project smaller and reduce redundancy. The rest of the code.
 
+Package.json Please refer to http://www.ruanyifeng.com/blog/2017/08/koa.html
+
 # start
 1 npm install
 2 node server.js
