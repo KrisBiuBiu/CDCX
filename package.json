@@ -29,6 +29,6 @@
     "koa-sslify": "^2.1.2",
     "koa-static": "^4.0.2",
     "koa-views": "^6.2.0",
-    "mongoose": "^5.6.1"
+    "mongoose": "^5.7.5"
   }
 }
